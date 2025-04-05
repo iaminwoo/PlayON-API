@@ -690,50 +690,35 @@
     // Script section to load models into a JS Var
     var defs = {}
             defs["AssignManagerRequest"] = {
-  "type" : "object",
   "properties" : {
     "targetMemberId" : {
-      "type" : "integer",
       "format" : "int64"
     }
   }
 };
             defs["ExpelMemberRequest"] = {
-  "type" : "object",
   "properties" : {
     "targetMemberId" : {
-      "type" : "integer",
       "format" : "int64"
     }
   }
 };
             defs["GameListResponse"] = {
-  "type" : "object",
   "properties" : {
     "appid" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "headerImage" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "headerImage" : { },
     "gameGenres" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      }
+      "items" : { }
     }
   }
 };
             defs["GetAllPartiesRequest"] = {
   "required" : [ "tags" ],
-  "type" : "object",
   "properties" : {
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyTagRequest"
       }
@@ -741,10 +726,8 @@
   }
 };
             defs["GetAllPendingMemberResponse"] = {
-  "type" : "object",
   "properties" : {
     "partyMembers" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyDetailMemberDto"
       }
@@ -752,112 +735,73 @@
   }
 };
             defs["GetGuildDetailResponse"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "memberCount" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "maxMembers" : {
-      "type" : "integer",
       "format" : "int32"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "isPublic" : { },
+    "guildImg" : { },
     "gameId" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagResponse"
       }
     },
     "myRole" : {
-      "type" : "string",
       "enum" : [ "LEADER", "MANAGER", "MEMBER" ]
     }
   }
 };
             defs["GetGuildListRequest"] = {
-  "type" : "object",
   "properties" : {
-    "name" : {
-      "type" : "string"
-    },
+    "name" : { },
     "gameIds" : {
-      "type" : "array",
       "items" : {
-        "type" : "integer",
         "format" : "int64"
       }
     },
     "tagFilters" : {
-      "type" : "object",
       "additionalProperties" : {
-        "type" : "array",
-        "items" : {
-          "type" : "string"
-        }
+        "items" : { }
       }
     },
     "page" : {
       "minimum" : 0,
-      "type" : "integer",
       "format" : "int32"
     },
     "size" : {
       "maximum" : 100,
       "minimum" : 1,
-      "type" : "integer",
       "format" : "int32"
     },
-    "sort" : {
-      "type" : "string"
-    }
+    "sort" : { }
   }
 };
             defs["GetGuildListResponse"] = {
-  "type" : "object",
   "properties" : {
     "guildId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "guildImg" : {
-      "type" : "string"
-    },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "guildImg" : { },
+    "name" : { },
+    "description" : { },
     "memberCount" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagResponse"
       }
@@ -865,56 +809,36 @@
   }
 };
             defs["GetMembersResponse"] = {
-  "type" : "object",
   "properties" : {
     "steamId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "username" : {
-      "type" : "string"
-    },
-    "profileImg" : {
-      "type" : "string"
-    }
+    "username" : { },
+    "profileImg" : { }
   }
 };
             defs["GetPartyDetailResponse"] = {
   "required" : [ "name", "ownerName" ],
-  "type" : "object",
   "properties" : {
     "partyId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "ownerName" : {
-      "type" : "string"
-    },
-    "ownerProfileImg" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "ownerName" : { },
+    "ownerProfileImg" : { },
+    "description" : { },
     "partyAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "hit" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "partyMembers" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyDetailMemberDto"
       }
     },
     "partyTags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyDetailTagDto"
       }
@@ -922,10 +846,8 @@
   }
 };
             defs["GetPartyMainResponse"] = {
-  "type" : "object",
   "properties" : {
     "parties" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GetPartyResponse"
       }
@@ -934,34 +856,24 @@
 };
             defs["GetPartyResponse"] = {
   "required" : [ "name" ],
-  "type" : "object",
   "properties" : {
     "partyId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "partyAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "total" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "members" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyDetailMemberDto"
       }
     },
     "partyTags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyDetailTagDto"
       }
@@ -969,27 +881,17 @@
   }
 };
             defs["GetPopularGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "guildId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
+    "guildImg" : { },
     "memberCount" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagResponse"
       }
@@ -997,140 +899,94 @@
   }
 };
             defs["GuildJoinRequestResponse"] = {
-  "type" : "object",
   "properties" : {
     "requestId" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "memberId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "username" : {
-      "type" : "string"
-    },
-    "profileImg" : {
-      "type" : "string"
-    },
+    "username" : { },
+    "profileImg" : { },
     "requestedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "approvalState" : {
-      "type" : "string",
       "enum" : [ "PENDING", "APPROVED", "REJECTED" ]
     }
   }
 };
             defs["GuildMemberResponse"] = {
-  "type" : "object",
   "properties" : {
     "memberId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "username" : {
-      "type" : "string"
-    },
-    "profileImg" : {
-      "type" : "string"
-    },
+    "username" : { },
+    "profileImg" : { },
     "guildRole" : {
-      "type" : "string",
       "enum" : [ "LEADER", "MANAGER", "MEMBER" ]
     },
     "joinedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "lastLoginAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "postCount" : {
-      "type" : "integer",
       "format" : "int32"
     }
   }
 };
             defs["GuildTagRequest"] = {
   "required" : [ "type", "value" ],
-  "type" : "object",
   "properties" : {
-    "type" : {
-      "type" : "string"
-    },
-    "value" : {
-      "type" : "string"
-    }
+    "type" : { },
+    "value" : { }
   }
 };
             defs["GuildTagResponse"] = {
   "required" : [ "type", "value" ],
-  "type" : "object",
   "properties" : {
-    "type" : {
-      "type" : "string"
-    },
-    "value" : {
-      "type" : "string"
-    }
+    "type" : { },
+    "value" : { }
   }
 };
             defs["LeaveGuildRequest"] = {
-  "type" : "object",
   "properties" : {
     "newLeaderId" : {
-      "type" : "integer",
       "format" : "int64"
     }
   }
 };
             defs["MemberAuthRequest"] = {
   "required" : [ "password", "username" ],
-  "type" : "object",
   "properties" : {
-    "username" : {
-      "type" : "string"
-    },
-    "password" : {
-      "type" : "string"
-    }
+    "username" : { },
+    "password" : { }
   }
 };
             defs["MemberDetailDto"] = {
   "required" : [ "nickname", "profileImg" ],
-  "type" : "object",
   "properties" : {
-    "nickname" : {
-      "type" : "string"
-    },
-    "profileImg" : {
-      "type" : "string"
-    },
+    "nickname" : { },
+    "profileImg" : { },
     "playStyle" : {
-      "type" : "string",
       "enum" : [ "BEGINNER", "CASUAL", "NORMAL", "HARDCORE", "COMPLETIONIST", "SPEEDRUN" ]
     },
     "skillLevel" : {
-      "type" : "string",
       "enum" : [ "NEWBIE", "PRO", "HACKER", "MASTER" ]
     },
     "gender" : {
-      "type" : "string",
       "enum" : [ "MALE", "FEMALE" ]
     }
   }
 };
             defs["MemberProfileResponse"] = {
-  "type" : "object",
   "properties" : {
     "memberDetail" : {
       "$ref" : "#/components/schemas/ProfileMemberDetailDto"
     },
     "ownedGames" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GameListResponse"
       }
@@ -1139,26 +995,20 @@
 };
             defs["PageDtoGetGuildListResponse"] = {
   "required" : [ "currentPageNumber", "items", "pageSize", "totalItems", "totalPages" ],
-  "type" : "object",
   "properties" : {
     "currentPageNumber" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "pageSize" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "totalPages" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "totalItems" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "items" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GetGuildListResponse"
       }
@@ -1167,26 +1017,20 @@
 };
             defs["PageDtoGetPartyResponse"] = {
   "required" : [ "currentPageNumber", "items", "pageSize", "totalItems", "totalPages" ],
-  "type" : "object",
   "properties" : {
     "currentPageNumber" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "pageSize" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "totalPages" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "totalItems" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "items" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GetPartyResponse"
       }
@@ -1194,81 +1038,54 @@
   }
 };
             defs["PartyDetailMemberDto"] = {
-  "type" : "object",
   "properties" : {
     "memberId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "profileImg" : {
-      "type" : "string"
-    }
+    "profileImg" : { }
   }
 };
             defs["PartyDetailTagDto"] = {
-  "type" : "object",
   "properties" : {
-    "tagValue" : {
-      "type" : "string"
-    }
+    "tagValue" : { }
   }
 };
             defs["PartyTagRequest"] = {
   "required" : [ "type", "value" ],
-  "type" : "object",
   "properties" : {
-    "type" : {
-      "type" : "string"
-    },
-    "value" : {
-      "type" : "string"
-    }
+    "type" : { },
+    "value" : { }
   }
 };
             defs["PartyTagResponse"] = {
   "required" : [ "type", "value" ],
-  "type" : "object",
   "properties" : {
-    "type" : {
-      "type" : "string"
-    },
-    "value" : {
-      "type" : "string"
-    }
+    "type" : { },
+    "value" : { }
   }
 };
             defs["PostGuildRequest"] = {
   "required" : [ "guildImg", "name", "tags" ],
-  "type" : "object",
   "properties" : {
     "name" : {
       "maxLength" : 50,
-      "minLength" : 0,
-      "type" : "string"
+      "minLength" : 0
     },
     "description" : {
       "maxLength" : 500,
-      "minLength" : 0,
-      "type" : "string"
+      "minLength" : 0
     },
     "maxMembers" : {
       "maximum" : 100,
       "minimum" : 1,
-      "type" : "integer",
       "format" : "int32"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
+    "isPublic" : { },
     "gameId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "guildImg" : { },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagRequest"
       }
@@ -1276,34 +1093,21 @@
   }
 };
             defs["PostGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "maxMembers" : {
-      "type" : "integer",
       "format" : "int32"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "isPublic" : { },
+    "guildImg" : { },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagResponse"
       }
@@ -1312,73 +1116,49 @@
 };
             defs["PostPartyLogRequest"] = {
   "required" : [ "comment", "content", "fileType" ],
-  "type" : "object",
   "properties" : {
-    "comment" : {
-      "type" : "string"
-    },
-    "content" : {
-      "type" : "string"
-    },
-    "fileType" : {
-      "type" : "string"
-    },
+    "comment" : { },
+    "content" : { },
+    "fileType" : { },
     "partyMemberId" : {
-      "type" : "integer",
       "format" : "int64"
     }
   }
 };
             defs["PostPartyLogResponse"] = {
-  "type" : "object",
   "properties" : {
     "logId" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "partyId" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "presignedUrl" : {
-      "type" : "string",
       "format" : "url"
     }
   }
 };
             defs["PostPartyRequest"] = {
   "required" : [ "game", "isPublic", "maximum", "minimum", "name", "partyAt", "tags" ],
-  "type" : "object",
   "properties" : {
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "partyAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
+    "isPublic" : { },
     "minimum" : {
       "minimum" : 2,
-      "type" : "integer",
       "format" : "int32"
     },
     "maximum" : {
       "maximum" : 50,
-      "type" : "integer",
       "format" : "int32"
     },
     "game" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyTagRequest"
       }
@@ -1387,35 +1167,23 @@
 };
             defs["PostPartyResponse"] = {
   "required" : [ "name" ],
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "gameId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
-    "isPublic" : {
-      "type" : "boolean"
-    },
+    "name" : { },
+    "description" : { },
+    "isPublic" : { },
     "minimum" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "maximum" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyTagResponse"
       }
@@ -1423,35 +1191,23 @@
   }
 };
             defs["ProfileMemberDetailDto"] = {
-  "type" : "object",
   "properties" : {
     "steamId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "username" : {
-      "type" : "string"
-    },
-    "nickname" : {
-      "type" : "string"
-    },
-    "profileImg" : {
-      "type" : "string"
-    },
+    "username" : { },
+    "nickname" : { },
+    "profileImg" : { },
     "lastLoginAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "playStyle" : {
-      "type" : "string",
       "enum" : [ "BEGINNER", "CASUAL", "NORMAL", "HARDCORE", "COMPLETIONIST", "SPEEDRUN" ]
     },
     "skillLevel" : {
-      "type" : "string",
       "enum" : [ "NEWBIE", "PRO", "HACKER", "MASTER" ]
     },
     "gender" : {
-      "type" : "string",
       "enum" : [ "MALE", "FEMALE" ]
     },
     "preferredGenre" : {
@@ -1461,32 +1217,23 @@
 };
             defs["PutGuildRequest"] = {
   "required" : [ "description", "guildImg", "name", "tags" ],
-  "type" : "object",
   "properties" : {
     "name" : {
       "maxLength" : 50,
-      "minLength" : 0,
-      "type" : "string"
+      "minLength" : 0
     },
     "description" : {
       "maxLength" : 500,
-      "minLength" : 0,
-      "type" : "string"
+      "minLength" : 0
     },
     "maxMembers" : {
       "maximum" : 100,
       "minimum" : 1,
-      "type" : "integer",
       "format" : "int32"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "isPublic" : { },
+    "guildImg" : { },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagRequest"
       }
@@ -1494,34 +1241,21 @@
   }
 };
             defs["PutGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "maxMembers" : {
-      "type" : "integer",
       "format" : "int32"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
-    "guildImg" : {
-      "type" : "string"
-    },
+    "isPublic" : { },
+    "guildImg" : { },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildTagResponse"
       }
@@ -1530,37 +1264,25 @@
 };
             defs["PutPartyRequest"] = {
   "required" : [ "game", "isPublic", "maximum", "minimum", "name", "partyAt", "tags" ],
-  "type" : "object",
   "properties" : {
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
+    "name" : { },
+    "description" : { },
     "partyAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
-    "isPublic" : {
-      "type" : "boolean"
-    },
+    "isPublic" : { },
     "minimum" : {
       "minimum" : 2,
-      "type" : "integer",
       "format" : "int32"
     },
     "maximum" : {
       "maximum" : 50,
-      "type" : "integer",
       "format" : "int32"
     },
     "game" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyTagRequest"
       }
@@ -1569,35 +1291,23 @@
 };
             defs["PutPartyResponse"] = {
   "required" : [ "name" ],
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "gameId" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
-    "description" : {
-      "type" : "string"
-    },
-    "isPublic" : {
-      "type" : "boolean"
-    },
+    "name" : { },
+    "description" : { },
+    "isPublic" : { },
     "minimum" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "maximum" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "tags" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/PartyTagResponse"
       }
@@ -1605,86 +1315,63 @@
   }
 };
             defs["RevokeManagerRequest"] = {
-  "type" : "object",
   "properties" : {
     "targetMemberId" : {
-      "type" : "integer",
       "format" : "int64"
     }
   }
 };
             defs["RsDataGetAllPendingMemberResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/GetAllPendingMemberResponse"
     }
   }
 };
             defs["RsDataGetGuildDetailResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/GetGuildDetailResponse"
     }
   }
 };
             defs["RsDataGetPartyDetailResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/GetPartyDetailResponse"
     }
   }
 };
             defs["RsDataGetPartyMainResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/GetPartyMainResponse"
     }
   }
 };
             defs["RsDataListGetMembersResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GetMembersResponse"
       }
@@ -1692,17 +1379,12 @@
   }
 };
             defs["RsDataListGetPopularGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GetPopularGuildResponse"
       }
@@ -1710,17 +1392,12 @@
   }
 };
             defs["RsDataListGuildJoinRequestResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildJoinRequestResponse"
       }
@@ -1728,17 +1405,12 @@
   }
 };
             defs["RsDataListGuildMemberResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/GuildMemberResponse"
       }
@@ -1746,337 +1418,230 @@
   }
 };
             defs["RsDataMapStringString"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
-      "type" : "object",
-      "additionalProperties" : {
-        "type" : "string"
-      }
+      "additionalProperties" : { }
     }
   }
 };
             defs["RsDataMemberDetailDto"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/MemberDetailDto"
     }
   }
 };
             defs["RsDataMemberProfileResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/MemberProfileResponse"
     }
   }
 };
             defs["RsDataPageDtoGetGuildListResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PageDtoGetGuildListResponse"
     }
   }
 };
             defs["RsDataPageDtoGetPartyResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PageDtoGetPartyResponse"
     }
   }
 };
             defs["RsDataPostGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PostGuildResponse"
     }
   }
 };
             defs["RsDataPostPartyLogResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PostPartyLogResponse"
     }
   }
 };
             defs["RsDataPostPartyResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PostPartyResponse"
     }
   }
 };
             defs["RsDataPutGuildResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PutGuildResponse"
     }
   }
 };
             defs["RsDataPutPartyResponse"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/PutPartyResponse"
     }
   }
 };
             defs["RsDataSteamGame"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
+    "msg" : { },
     "data" : {
       "$ref" : "#/components/schemas/SteamGame"
     }
   }
 };
             defs["RsDataString"] = {
-  "type" : "object",
   "properties" : {
     "resultCode" : {
-      "type" : "string",
       "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 EARLY_HINTS", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "425 TOO_EARLY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
     },
-    "msg" : {
-      "type" : "string"
-    },
-    "data" : {
-      "type" : "string"
-    }
+    "msg" : { },
+    "data" : { }
   }
 };
             defs["SteamGame"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "modifiedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "appid" : {
-      "type" : "integer",
       "format" : "int64"
     },
-    "name" : {
-      "type" : "string"
-    },
+    "name" : { },
     "releaseDate" : {
-      "type" : "string",
       "format" : "date"
     },
-    "headerImage" : {
-      "type" : "string"
-    },
+    "headerImage" : { },
     "requiredAge" : {
-      "type" : "integer",
       "format" : "int32"
     },
-    "aboutTheGame" : {
-      "type" : "string"
-    },
-    "shortDescription" : {
-      "type" : "string"
-    },
-    "website" : {
-      "type" : "string"
-    },
-    "developers" : {
-      "type" : "string"
-    },
-    "publishers" : {
-      "type" : "string"
-    },
+    "aboutTheGame" : { },
+    "shortDescription" : { },
+    "website" : { },
+    "developers" : { },
+    "publishers" : { },
     "percentPositiveTotal" : {
-      "type" : "integer",
       "format" : "int32"
     },
     "totalReviewCount" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "screenshots" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/SteamImage"
       }
     },
     "movies" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/SteamMovie"
       }
     },
     "genres" : {
-      "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/SteamGenre"
       }
     },
-    "windowsSupported" : {
-      "type" : "boolean"
-    },
-    "macSupported" : {
-      "type" : "boolean"
-    },
-    "linuxSupported" : {
-      "type" : "boolean"
-    },
-    "singlePlayer" : {
-      "type" : "boolean"
-    },
-    "multiPlayer" : {
-      "type" : "boolean"
-    }
+    "windowsSupported" : { },
+    "macSupported" : { },
+    "linuxSupported" : { },
+    "singlePlayer" : { },
+    "multiPlayer" : { }
   }
 };
             defs["SteamGenre"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "modifiedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
-    "name" : {
-      "type" : "string"
-    }
+    "name" : { }
   }
 };
             defs["SteamImage"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "modifiedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
-    "screenshot" : {
-      "type" : "string"
-    }
+    "screenshot" : { }
   }
 };
             defs["SteamMovie"] = {
-  "type" : "object",
   "properties" : {
     "id" : {
-      "type" : "integer",
       "format" : "int64"
     },
     "createdAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
     "modifiedAt" : {
-      "type" : "string",
       "format" : "date-time"
     },
-    "movie" : {
-      "type" : "string"
-    }
+    "movie" : { }
   }
 };
   </script>
@@ -2305,8 +1870,7 @@ public class BatchJobControllerApiExample {
         
         BatchJobControllerApi apiInstance = new BatchJobControllerApi();
         try {
-            'String' result = apiInstance.runSteamGameJob();
-            System.out.println(result);
+            apiInstance.runSteamGameJob();
         } catch (ApiException e) {
             System.err.println("Exception when calling BatchJobControllerApi#runSteamGameJob");
             e.printStackTrace();
@@ -2323,8 +1887,7 @@ public class BatchJobControllerApiExample {
     public static void main(String[] args) {
         BatchJobControllerApi apiInstance = new BatchJobControllerApi();
         try {
-            'String' result = apiInstance.runSteamGameJob();
-            System.out.println(result);
+            apiInstance.runSteamGameJob();
         } catch (ApiException e) {
             System.err.println("Exception when calling BatchJobControllerApi#runSteamGameJob");
             e.printStackTrace();
@@ -2341,10 +1904,7 @@ public class BatchJobControllerApiExample {
 BatchJobControllerApi *apiInstance = [[BatchJobControllerApi alloc] init];
 
 [apiInstance runSteamGameJobWithCompletionHandler: 
-              ^('String' output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
+              ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
                             }
@@ -2360,7 +1920,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 api.runSteamGameJob(callback);
@@ -2388,8 +1948,7 @@ namespace Example
 
             try
             {
-                'String' result = apiInstance.runSteamGameJob();
-                Debug.WriteLine(result);
+                apiInstance.runSteamGameJob();
             }
             catch (Exception e)
             {
@@ -2408,8 +1967,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new Swagger\Client\ApiBatchJobControllerApi();
 
 try {
-    $result = $api_instance->runSteamGameJob();
-    print_r($result);
+    $api_instance->runSteamGameJob();
 } catch (Exception $e) {
     echo 'Exception when calling BatchJobControllerApi->runSteamGameJob: ', $e->getMessage(), PHP_EOL;
 }
@@ -2424,8 +1982,7 @@ use WWW::SwaggerClient::BatchJobControllerApi;
 my $api_instance = WWW::SwaggerClient::BatchJobControllerApi->new();
 
 eval { 
-    my $result = $api_instance->runSteamGameJob();
-    print Dumper($result);
+    $api_instance->runSteamGameJob();
 };
 if ($@) {
     warn "Exception when calling BatchJobControllerApi->runSteamGameJob: $@\n";
@@ -2443,8 +2000,7 @@ from pprint import pprint
 api_instance = swagger_client.BatchJobControllerApi()
 
 try: 
-    api_response = api_instance.run_steam_game_job()
-    pprint(api_response)
+    api_instance.run_steam_game_job()
 except ApiException as e:
     print("Exception when calling BatchJobControllerApi->runSteamGameJob: %s\n" % e)</code></pre>
                             </div>
@@ -2477,7 +2033,6 @@ except ApiException as e:
   "content" : {
     "*/*" : {
       "schema" : {
-        "type" : "string",
         "x-content-type" : "*/*"
       }
     }
@@ -2563,7 +2118,7 @@ public class GameControllerApiExample {
     public static void main(String[] args) {
         
         GameControllerApi apiInstance = new GameControllerApi();
-        Long appid = 789; // Long | 
+         appid = ; //  | 
         try {
             RsDataSteamGame result = apiInstance.getGameDetail(appid);
             System.out.println(result);
@@ -2582,7 +2137,7 @@ public class GameControllerApiExample {
 
     public static void main(String[] args) {
         GameControllerApi apiInstance = new GameControllerApi();
-        Long appid = 789; // Long | 
+         appid = ; //  | 
         try {
             RsDataSteamGame result = apiInstance.getGameDetail(appid);
             System.out.println(result);
@@ -2598,7 +2153,7 @@ public class GameControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GameController-getGameDetail-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *appid = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *appid = ; // 
 
 GameControllerApi *apiInstance = [[GameControllerApi alloc] init];
 
@@ -2618,7 +2173,7 @@ GameControllerApi *apiInstance = [[GameControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GameControllerApi()
-var appid = 789; // {{Long}} 
+var appid = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2649,7 +2204,7 @@ namespace Example
         {
 
             var apiInstance = new GameControllerApi();
-            var appid = 789;  // Long | 
+            var appid = new (); //  | 
 
             try
             {
@@ -2671,7 +2226,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGameControllerApi();
-$appid = 789; // Long | 
+$appid = ; //  | 
 
 try {
     $result = $api_instance->getGameDetail($appid);
@@ -2688,7 +2243,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GameControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GameControllerApi->new();
-my $appid = 789; # Long | 
+my $appid = ; #  | 
 
 eval { 
     my $result = $api_instance->getGameDetail(appid => $appid);
@@ -2708,7 +2263,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GameControllerApi()
-appid = 789 # Long | 
+appid =  #  | 
 
 try: 
     api_response = api_instance.get_game_detail(appid)
@@ -2734,7 +2289,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -3167,7 +2722,7 @@ public class GuildControllerApiExample {
     public static void main(String[] args) {
         
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.deleteGuild(guildId);
             System.out.println(result);
@@ -3186,7 +2741,7 @@ public class GuildControllerApiExample {
 
     public static void main(String[] args) {
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.deleteGuild(guildId);
             System.out.println(result);
@@ -3202,7 +2757,7 @@ public class GuildControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildController-deleteGuild-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 
 GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
@@ -3222,7 +2777,7 @@ GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -3253,7 +2808,7 @@ namespace Example
         {
 
             var apiInstance = new GuildControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -3275,7 +2830,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->deleteGuild($guildId);
@@ -3292,7 +2847,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->deleteGuild(guildId => $guildId);
@@ -3312,7 +2867,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.delete_guild(guildId)
@@ -3338,7 +2893,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -3460,7 +3015,7 @@ public class GuildControllerApiExample {
     public static void main(String[] args) {
         
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataGetGuildDetailResponse result = apiInstance.getGuildDetail(guildId);
             System.out.println(result);
@@ -3479,7 +3034,7 @@ public class GuildControllerApiExample {
 
     public static void main(String[] args) {
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataGetGuildDetailResponse result = apiInstance.getGuildDetail(guildId);
             System.out.println(result);
@@ -3495,7 +3050,7 @@ public class GuildControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildController-getGuildDetail-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 
 GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
@@ -3515,7 +3070,7 @@ GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -3546,7 +3101,7 @@ namespace Example
         {
 
             var apiInstance = new GuildControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -3568,7 +3123,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->getGuildDetail($guildId);
@@ -3585,7 +3140,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->getGuildDetail(guildId => $guildId);
@@ -3605,7 +3160,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.get_guild_detail(guildId)
@@ -3631,7 +3186,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -3753,7 +3308,7 @@ public class GuildControllerApiExample {
     public static void main(String[] args) {
         
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Integer count = 56; // Integer | 
+         count = ; //  | 
         try {
             RsDataListGetPopularGuildResponse result = apiInstance.getPopularGuilds(count);
             System.out.println(result);
@@ -3772,7 +3327,7 @@ public class GuildControllerApiExample {
 
     public static void main(String[] args) {
         GuildControllerApi apiInstance = new GuildControllerApi();
-        Integer count = 56; // Integer | 
+         count = ; //  | 
         try {
             RsDataListGetPopularGuildResponse result = apiInstance.getPopularGuilds(count);
             System.out.println(result);
@@ -3788,7 +3343,7 @@ public class GuildControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildController-getPopularGuilds-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Integer *count = 56; //  (optional) (default to 10)
+                              <pre class="prettyprint"><code class="language-cpp"> *count = ; //  (optional) (default to 10)
 
 GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
@@ -3809,7 +3364,7 @@ GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
 var api = new Api.GuildControllerApi()
 var opts = { 
-  'count': 56 // {{Integer}} 
+  'count':  // {{}} 
 };
 var callback = function(error, data, response) {
   if (error) {
@@ -3840,7 +3395,7 @@ namespace Example
         {
 
             var apiInstance = new GuildControllerApi();
-            var count = 56;  // Integer |  (optional)  (default to 10)
+            var count = new (); //  |  (optional)  (default to 10)
 
             try
             {
@@ -3862,7 +3417,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildControllerApi();
-$count = 56; // Integer | 
+$count = ; //  | 
 
 try {
     $result = $api_instance->getPopularGuilds($count);
@@ -3879,7 +3434,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildControllerApi->new();
-my $count = 56; # Integer | 
+my $count = ; #  | 
 
 eval { 
     my $result = $api_instance->getPopularGuilds(count => $count);
@@ -3899,7 +3454,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildControllerApi()
-count = 56 # Integer |  (optional) (default to 10)
+count =  #  |  (optional) (default to 10)
 
 try: 
     api_response = api_instance.get_popular_guilds(count=count)
@@ -3929,7 +3484,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    Integer
+                                                    
                                                 </span>
                                                     <span class="format">
                                                         (int32)
@@ -4336,7 +3891,7 @@ public class GuildControllerApiExample {
         
         GuildControllerApi apiInstance = new GuildControllerApi();
         PutGuildRequest body = ; // PutGuildRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataPutGuildResponse result = apiInstance.updateGuild(body, guildId);
             System.out.println(result);
@@ -4356,7 +3911,7 @@ public class GuildControllerApiExample {
     public static void main(String[] args) {
         GuildControllerApi apiInstance = new GuildControllerApi();
         PutGuildRequest body = ; // PutGuildRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataPutGuildResponse result = apiInstance.updateGuild(body, guildId);
             System.out.println(result);
@@ -4373,7 +3928,7 @@ public class GuildControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-GuildController-updateGuild-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">PutGuildRequest *body = ; // 
-Long *guildId = 789; // 
+ *guildId = ; // 
 
 GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
@@ -4395,7 +3950,7 @@ GuildControllerApi *apiInstance = [[GuildControllerApi alloc] init];
 
 var api = new Api.GuildControllerApi()
 var body = ; // {{PutGuildRequest}} 
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -4427,7 +3982,7 @@ namespace Example
 
             var apiInstance = new GuildControllerApi();
             var body = new PutGuildRequest(); // PutGuildRequest | 
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -4450,7 +4005,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildControllerApi();
 $body = ; // PutGuildRequest | 
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->updateGuild($body, $guildId);
@@ -4468,7 +4023,7 @@ use WWW::SwaggerClient::GuildControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildControllerApi->new();
 my $body = WWW::SwaggerClient::Object::PutGuildRequest->new(); # PutGuildRequest | 
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->updateGuild(body => $body, guildId => $guildId);
@@ -4489,7 +4044,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.GuildControllerApi()
 body =  # PutGuildRequest | 
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.update_guild(body, guildId)
@@ -4515,7 +4070,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -4683,8 +4238,8 @@ public class GuildJoinRequestControllerApiExample {
     public static void main(String[] args) {
         
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
-        Long requestId = 789; // Long | 
+         guildId = ; //  | 
+         requestId = ; //  | 
         try {
             RsDataString result = apiInstance.approveRequest(guildId, requestId);
             System.out.println(result);
@@ -4703,8 +4258,8 @@ public class GuildJoinRequestControllerApiExample {
 
     public static void main(String[] args) {
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
-        Long requestId = 789; // Long | 
+         guildId = ; //  | 
+         requestId = ; //  | 
         try {
             RsDataString result = apiInstance.approveRequest(guildId, requestId);
             System.out.println(result);
@@ -4720,8 +4275,8 @@ public class GuildJoinRequestControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildJoinRequestController-approveRequest-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
-Long *requestId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
+ *requestId = ; // 
 
 GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi alloc] init];
 
@@ -4742,8 +4297,8 @@ GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi all
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildJoinRequestControllerApi()
-var guildId = 789; // {{Long}} 
-var requestId = 789; // {{Long}} 
+var guildId = ; // {{}} 
+var requestId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -4774,8 +4329,8 @@ namespace Example
         {
 
             var apiInstance = new GuildJoinRequestControllerApi();
-            var guildId = 789;  // Long | 
-            var requestId = 789;  // Long | 
+            var guildId = new (); //  | 
+            var requestId = new (); //  | 
 
             try
             {
@@ -4797,8 +4352,8 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildJoinRequestControllerApi();
-$guildId = 789; // Long | 
-$requestId = 789; // Long | 
+$guildId = ; //  | 
+$requestId = ; //  | 
 
 try {
     $result = $api_instance->approveRequest($guildId, $requestId);
@@ -4815,8 +4370,8 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildJoinRequestControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildJoinRequestControllerApi->new();
-my $guildId = 789; # Long | 
-my $requestId = 789; # Long | 
+my $guildId = ; #  | 
+my $requestId = ; #  | 
 
 eval { 
     my $result = $api_instance->approveRequest(guildId => $guildId, requestId => $requestId);
@@ -4836,8 +4391,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildJoinRequestControllerApi()
-guildId = 789 # Long | 
-requestId = 789 # Long | 
+guildId =  #  | 
+requestId =  #  | 
 
 try: 
     api_response = api_instance.approve_request(guildId, requestId)
@@ -4863,7 +4418,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -4885,7 +4440,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -5007,7 +4562,7 @@ public class GuildJoinRequestControllerApiExample {
     public static void main(String[] args) {
         
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataListGuildJoinRequestResponse result = apiInstance.getJoinRequests(guildId);
             System.out.println(result);
@@ -5026,7 +4581,7 @@ public class GuildJoinRequestControllerApiExample {
 
     public static void main(String[] args) {
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataListGuildJoinRequestResponse result = apiInstance.getJoinRequests(guildId);
             System.out.println(result);
@@ -5042,7 +4597,7 @@ public class GuildJoinRequestControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildJoinRequestController-getJoinRequests-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 
 GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi alloc] init];
 
@@ -5062,7 +4617,7 @@ GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi all
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildJoinRequestControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -5093,7 +4648,7 @@ namespace Example
         {
 
             var apiInstance = new GuildJoinRequestControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -5115,7 +4670,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildJoinRequestControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->getJoinRequests($guildId);
@@ -5132,7 +4687,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildJoinRequestControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildJoinRequestControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->getJoinRequests(guildId => $guildId);
@@ -5152,7 +4707,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildJoinRequestControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.get_join_requests(guildId)
@@ -5178,7 +4733,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -5300,7 +4855,7 @@ public class GuildJoinRequestControllerApiExample {
     public static void main(String[] args) {
         
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.joinRequest(guildId);
             System.out.println(result);
@@ -5319,7 +4874,7 @@ public class GuildJoinRequestControllerApiExample {
 
     public static void main(String[] args) {
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.joinRequest(guildId);
             System.out.println(result);
@@ -5335,7 +4890,7 @@ public class GuildJoinRequestControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildJoinRequestController-joinRequest-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 
 GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi alloc] init];
 
@@ -5355,7 +4910,7 @@ GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi all
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildJoinRequestControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -5386,7 +4941,7 @@ namespace Example
         {
 
             var apiInstance = new GuildJoinRequestControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -5408,7 +4963,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildJoinRequestControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->joinRequest($guildId);
@@ -5425,7 +4980,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildJoinRequestControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildJoinRequestControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->joinRequest(guildId => $guildId);
@@ -5445,7 +5000,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildJoinRequestControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.join_request(guildId)
@@ -5471,7 +5026,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -5593,8 +5148,8 @@ public class GuildJoinRequestControllerApiExample {
     public static void main(String[] args) {
         
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
-        Long requestId = 789; // Long | 
+         guildId = ; //  | 
+         requestId = ; //  | 
         try {
             RsDataString result = apiInstance.rejectRequest(guildId, requestId);
             System.out.println(result);
@@ -5613,8 +5168,8 @@ public class GuildJoinRequestControllerApiExample {
 
     public static void main(String[] args) {
         GuildJoinRequestControllerApi apiInstance = new GuildJoinRequestControllerApi();
-        Long guildId = 789; // Long | 
-        Long requestId = 789; // Long | 
+         guildId = ; //  | 
+         requestId = ; //  | 
         try {
             RsDataString result = apiInstance.rejectRequest(guildId, requestId);
             System.out.println(result);
@@ -5630,8 +5185,8 @@ public class GuildJoinRequestControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildJoinRequestController-rejectRequest-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
-Long *requestId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
+ *requestId = ; // 
 
 GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi alloc] init];
 
@@ -5652,8 +5207,8 @@ GuildJoinRequestControllerApi *apiInstance = [[GuildJoinRequestControllerApi all
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildJoinRequestControllerApi()
-var guildId = 789; // {{Long}} 
-var requestId = 789; // {{Long}} 
+var guildId = ; // {{}} 
+var requestId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -5684,8 +5239,8 @@ namespace Example
         {
 
             var apiInstance = new GuildJoinRequestControllerApi();
-            var guildId = 789;  // Long | 
-            var requestId = 789;  // Long | 
+            var guildId = new (); //  | 
+            var requestId = new (); //  | 
 
             try
             {
@@ -5707,8 +5262,8 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildJoinRequestControllerApi();
-$guildId = 789; // Long | 
-$requestId = 789; // Long | 
+$guildId = ; //  | 
+$requestId = ; //  | 
 
 try {
     $result = $api_instance->rejectRequest($guildId, $requestId);
@@ -5725,8 +5280,8 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildJoinRequestControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildJoinRequestControllerApi->new();
-my $guildId = 789; # Long | 
-my $requestId = 789; # Long | 
+my $guildId = ; #  | 
+my $requestId = ; #  | 
 
 eval { 
     my $result = $api_instance->rejectRequest(guildId => $guildId, requestId => $requestId);
@@ -5746,8 +5301,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildJoinRequestControllerApi()
-guildId = 789 # Long | 
-requestId = 789 # Long | 
+guildId =  #  | 
+requestId =  #  | 
 
 try: 
     api_response = api_instance.reject_request(guildId, requestId)
@@ -5773,7 +5328,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -5795,7 +5350,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -5922,7 +5477,7 @@ public class GuildMemberControllerApiExample {
         
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         AssignManagerRequest body = ; // AssignManagerRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.assignManager(body, guildId);
             System.out.println(result);
@@ -5942,7 +5497,7 @@ public class GuildMemberControllerApiExample {
     public static void main(String[] args) {
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         AssignManagerRequest body = ; // AssignManagerRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.assignManager(body, guildId);
             System.out.println(result);
@@ -5959,7 +5514,7 @@ public class GuildMemberControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-GuildMemberController-assignManager-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">AssignManagerRequest *body = ; // 
-Long *guildId = 789; // 
+ *guildId = ; // 
 
 GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
@@ -5981,7 +5536,7 @@ GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
 var api = new Api.GuildMemberControllerApi()
 var body = ; // {{AssignManagerRequest}} 
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -6013,7 +5568,7 @@ namespace Example
 
             var apiInstance = new GuildMemberControllerApi();
             var body = new AssignManagerRequest(); // AssignManagerRequest | 
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -6036,7 +5591,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildMemberControllerApi();
 $body = ; // AssignManagerRequest | 
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->assignManager($body, $guildId);
@@ -6054,7 +5609,7 @@ use WWW::SwaggerClient::GuildMemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildMemberControllerApi->new();
 my $body = WWW::SwaggerClient::Object::AssignManagerRequest->new(); # AssignManagerRequest | 
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->assignManager(body => $body, guildId => $guildId);
@@ -6075,7 +5630,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.GuildMemberControllerApi()
 body =  # AssignManagerRequest | 
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.assign_manager(body, guildId)
@@ -6101,7 +5656,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -6268,7 +5823,7 @@ public class GuildMemberControllerApiExample {
         
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         ExpelMemberRequest body = ; // ExpelMemberRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.expelMember(body, guildId);
             System.out.println(result);
@@ -6288,7 +5843,7 @@ public class GuildMemberControllerApiExample {
     public static void main(String[] args) {
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         ExpelMemberRequest body = ; // ExpelMemberRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.expelMember(body, guildId);
             System.out.println(result);
@@ -6305,7 +5860,7 @@ public class GuildMemberControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-GuildMemberController-expelMember-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">ExpelMemberRequest *body = ; // 
-Long *guildId = 789; // 
+ *guildId = ; // 
 
 GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
@@ -6327,7 +5882,7 @@ GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
 var api = new Api.GuildMemberControllerApi()
 var body = ; // {{ExpelMemberRequest}} 
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -6359,7 +5914,7 @@ namespace Example
 
             var apiInstance = new GuildMemberControllerApi();
             var body = new ExpelMemberRequest(); // ExpelMemberRequest | 
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -6382,7 +5937,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildMemberControllerApi();
 $body = ; // ExpelMemberRequest | 
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->expelMember($body, $guildId);
@@ -6400,7 +5955,7 @@ use WWW::SwaggerClient::GuildMemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildMemberControllerApi->new();
 my $body = WWW::SwaggerClient::Object::ExpelMemberRequest->new(); # ExpelMemberRequest | 
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->expelMember(body => $body, guildId => $guildId);
@@ -6421,7 +5976,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.GuildMemberControllerApi()
 body =  # ExpelMemberRequest | 
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.expel_member(body, guildId)
@@ -6447,7 +6002,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -6612,7 +6167,7 @@ public class GuildMemberControllerApiExample {
     public static void main(String[] args) {
         
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataListGuildMemberResponse result = apiInstance.getGuildMembers(guildId);
             System.out.println(result);
@@ -6631,7 +6186,7 @@ public class GuildMemberControllerApiExample {
 
     public static void main(String[] args) {
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataListGuildMemberResponse result = apiInstance.getGuildMembers(guildId);
             System.out.println(result);
@@ -6647,7 +6202,7 @@ public class GuildMemberControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildMemberController-getGuildMembers-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 
 GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
@@ -6667,7 +6222,7 @@ GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildMemberControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -6698,7 +6253,7 @@ namespace Example
         {
 
             var apiInstance = new GuildMemberControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -6720,7 +6275,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildMemberControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->getGuildMembers($guildId);
@@ -6737,7 +6292,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildMemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildMemberControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->getGuildMembers(guildId => $guildId);
@@ -6757,7 +6312,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildMemberControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.get_guild_members(guildId)
@@ -6783,7 +6338,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -6906,7 +6461,7 @@ public class GuildMemberControllerApiExample {
     public static void main(String[] args) {
         
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         LeaveGuildRequest body = ; // LeaveGuildRequest | 
         try {
             RsDataString result = apiInstance.leaveGuild(guildId, body);
@@ -6926,7 +6481,7 @@ public class GuildMemberControllerApiExample {
 
     public static void main(String[] args) {
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         LeaveGuildRequest body = ; // LeaveGuildRequest | 
         try {
             RsDataString result = apiInstance.leaveGuild(guildId, body);
@@ -6943,7 +6498,7 @@ public class GuildMemberControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-GuildMemberController-leaveGuild-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *guildId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *guildId = ; // 
 LeaveGuildRequest *body = ; //  (optional)
 
 GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
@@ -6965,7 +6520,7 @@ GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.GuildMemberControllerApi()
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 var opts = { 
   'body':  // {{LeaveGuildRequest}} 
 };
@@ -6998,7 +6553,7 @@ namespace Example
         {
 
             var apiInstance = new GuildMemberControllerApi();
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
             var body = new LeaveGuildRequest(); // LeaveGuildRequest |  (optional) 
 
             try
@@ -7021,7 +6576,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildMemberControllerApi();
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 $body = ; // LeaveGuildRequest | 
 
 try {
@@ -7039,7 +6594,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::GuildMemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildMemberControllerApi->new();
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 my $body = WWW::SwaggerClient::Object::LeaveGuildRequest->new(); # LeaveGuildRequest | 
 
 eval { 
@@ -7060,7 +6615,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.GuildMemberControllerApi()
-guildId = 789 # Long | 
+guildId =  #  | 
 body =  # LeaveGuildRequest |  (optional)
 
 try: 
@@ -7087,7 +6642,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -7253,7 +6808,7 @@ public class GuildMemberControllerApiExample {
         
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         RevokeManagerRequest body = ; // RevokeManagerRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.revokeManager(body, guildId);
             System.out.println(result);
@@ -7273,7 +6828,7 @@ public class GuildMemberControllerApiExample {
     public static void main(String[] args) {
         GuildMemberControllerApi apiInstance = new GuildMemberControllerApi();
         RevokeManagerRequest body = ; // RevokeManagerRequest | 
-        Long guildId = 789; // Long | 
+         guildId = ; //  | 
         try {
             RsDataString result = apiInstance.revokeManager(body, guildId);
             System.out.println(result);
@@ -7290,7 +6845,7 @@ public class GuildMemberControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-GuildMemberController-revokeManager-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">RevokeManagerRequest *body = ; // 
-Long *guildId = 789; // 
+ *guildId = ; // 
 
 GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
@@ -7312,7 +6867,7 @@ GuildMemberControllerApi *apiInstance = [[GuildMemberControllerApi alloc] init];
 
 var api = new Api.GuildMemberControllerApi()
 var body = ; // {{RevokeManagerRequest}} 
-var guildId = 789; // {{Long}} 
+var guildId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -7344,7 +6899,7 @@ namespace Example
 
             var apiInstance = new GuildMemberControllerApi();
             var body = new RevokeManagerRequest(); // RevokeManagerRequest | 
-            var guildId = 789;  // Long | 
+            var guildId = new (); //  | 
 
             try
             {
@@ -7367,7 +6922,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiGuildMemberControllerApi();
 $body = ; // RevokeManagerRequest | 
-$guildId = 789; // Long | 
+$guildId = ; //  | 
 
 try {
     $result = $api_instance->revokeManager($body, $guildId);
@@ -7385,7 +6940,7 @@ use WWW::SwaggerClient::GuildMemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::GuildMemberControllerApi->new();
 my $body = WWW::SwaggerClient::Object::RevokeManagerRequest->new(); # RevokeManagerRequest | 
-my $guildId = 789; # Long | 
+my $guildId = ; #  | 
 
 eval { 
     my $result = $api_instance->revokeManager(body => $body, guildId => $guildId);
@@ -7406,7 +6961,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.GuildMemberControllerApi()
 body =  # RevokeManagerRequest | 
-guildId = 789 # Long | 
+guildId =  #  | 
 
 try: 
     api_response = api_instance.revoke_manager(body, guildId)
@@ -7432,7 +6987,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -7858,7 +7413,7 @@ public class MemberControllerApiExample {
     public static void main(String[] args) {
         
         MemberControllerApi apiInstance = new MemberControllerApi();
-        String nickname = nickname_example; // String | 
+         nickname = ; //  | 
         try {
             RsDataListGetMembersResponse result = apiInstance.getMembersByNickname(nickname);
             System.out.println(result);
@@ -7877,7 +7432,7 @@ public class MemberControllerApiExample {
 
     public static void main(String[] args) {
         MemberControllerApi apiInstance = new MemberControllerApi();
-        String nickname = nickname_example; // String | 
+         nickname = ; //  | 
         try {
             RsDataListGetMembersResponse result = apiInstance.getMembersByNickname(nickname);
             System.out.println(result);
@@ -7893,7 +7448,7 @@ public class MemberControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-MemberController-getMembersByNickname-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *nickname = nickname_example; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *nickname = ; // 
 
 MemberControllerApi *apiInstance = [[MemberControllerApi alloc] init];
 
@@ -7913,7 +7468,7 @@ MemberControllerApi *apiInstance = [[MemberControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.MemberControllerApi()
-var nickname = nickname_example; // {{String}} 
+var nickname = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -7944,7 +7499,7 @@ namespace Example
         {
 
             var apiInstance = new MemberControllerApi();
-            var nickname = nickname_example;  // String | 
+            var nickname = new (); //  | 
 
             try
             {
@@ -7966,7 +7521,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiMemberControllerApi();
-$nickname = nickname_example; // String | 
+$nickname = ; //  | 
 
 try {
     $result = $api_instance->getMembersByNickname($nickname);
@@ -7983,7 +7538,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::MemberControllerApi;
 
 my $api_instance = WWW::SwaggerClient::MemberControllerApi->new();
-my $nickname = nickname_example; # String | 
+my $nickname = ; #  | 
 
 eval { 
     my $result = $api_instance->getMembersByNickname(nickname => $nickname);
@@ -8003,7 +7558,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.MemberControllerApi()
-nickname = nickname_example # String | 
+nickname =  #  | 
 
 try: 
     api_response = api_instance.get_members_by_nickname(nickname)
@@ -8033,7 +7588,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    String
+                                                    
                                                 </span>
                                 
                                             </div>
@@ -9341,8 +8896,8 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.approveParticipation(partyId, memberId);
         } catch (ApiException e) {
@@ -9360,8 +8915,8 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.approveParticipation(partyId, memberId);
         } catch (ApiException e) {
@@ -9376,8 +8931,8 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-approveParticipation-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
-Long *memberId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
+ *memberId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -9396,8 +8951,8 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
-var memberId = 789; // {{Long}} 
+var partyId = ; // {{}} 
+var memberId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -9428,8 +8983,8 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
-            var memberId = 789;  // Long | 
+            var partyId = new (); //  | 
+            var memberId = new (); //  | 
 
             try
             {
@@ -9451,8 +9006,8 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
-$memberId = 789; // Long | 
+$partyId = ; //  | 
+$memberId = ; //  | 
 
 try {
     $api_instance->approveParticipation($partyId, $memberId);
@@ -9468,8 +9023,8 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
-my $memberId = 789; # Long | 
+my $partyId = ; #  | 
+my $memberId = ; #  | 
 
 eval { 
     $api_instance->approveParticipation(partyId => $partyId, memberId => $memberId);
@@ -9488,8 +9043,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
-memberId = 789 # Long | 
+partyId =  #  | 
+memberId =  #  | 
 
 try: 
     # 파티 신청 수락
@@ -9515,7 +9070,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -9537,7 +9092,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -9929,7 +9484,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             apiInstance.deleteParty(partyId);
         } catch (ApiException e) {
@@ -9947,7 +9502,7 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             apiInstance.deleteParty(partyId);
         } catch (ApiException e) {
@@ -9962,7 +9517,7 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-deleteParty-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -9980,7 +9535,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -10011,7 +9566,7 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -10033,7 +9588,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $api_instance->deleteParty($partyId);
@@ -10049,7 +9604,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     $api_instance->deleteParty(partyId => $partyId);
@@ -10068,7 +9623,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 취소
@@ -10094,7 +9649,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -10178,10 +9733,10 @@ public class PartyControllerApiExample {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
         GetAllPartiesRequest body = ; // GetAllPartiesRequest | 
-        Integer page = 56; // Integer | 
-        Integer pageSize = 56; // Integer | 
-        String orderBy = orderBy_example; // String | 
-        Date partyAt = 2013-10-20T19:20:30+01:00; // Date | 
+         page = ; //  | 
+         pageSize = ; //  | 
+         orderBy = ; //  | 
+         partyAt = ; //  | 
         try {
             RsDataPageDtoGetPartyResponse result = apiInstance.getAllParties(body, page, pageSize, orderBy, partyAt);
             System.out.println(result);
@@ -10201,10 +9756,10 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
         GetAllPartiesRequest body = ; // GetAllPartiesRequest | 
-        Integer page = 56; // Integer | 
-        Integer pageSize = 56; // Integer | 
-        String orderBy = orderBy_example; // String | 
-        Date partyAt = 2013-10-20T19:20:30+01:00; // Date | 
+         page = ; //  | 
+         pageSize = ; //  | 
+         orderBy = ; //  | 
+         partyAt = ; //  | 
         try {
             RsDataPageDtoGetPartyResponse result = apiInstance.getAllParties(body, page, pageSize, orderBy, partyAt);
             System.out.println(result);
@@ -10221,10 +9776,10 @@ public class PartyControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-getAllParties-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">GetAllPartiesRequest *body = ; // 
-Integer *page = 56; //  (optional) (default to 1)
-Integer *pageSize = 56; //  (optional) (default to 10)
-String *orderBy = orderBy_example; //  (optional) (default to latest)
-Date *partyAt = 2013-10-20T19:20:30+01:00; //  (optional)
+ *page = ; //  (optional) (default to 1)
+ *pageSize = ; //  (optional) (default to 10)
+ *orderBy = ; //  (optional) (default to latest)
+ *partyAt = ; //  (optional)
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -10251,10 +9806,10 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 var api = new Api.PartyControllerApi()
 var body = ; // {{GetAllPartiesRequest}} 
 var opts = { 
-  'page': 56 // {{Integer}} 
-  'pageSize': 56 // {{Integer}} 
-  'orderBy': orderBy_example // {{String}} 
-  'partyAt': 2013-10-20T19:20:30+01:00 // {{Date}} 
+  'page':  // {{}} 
+  'pageSize':  // {{}} 
+  'orderBy':  // {{}} 
+  'partyAt':  // {{}} 
 };
 var callback = function(error, data, response) {
   if (error) {
@@ -10286,10 +9841,10 @@ namespace Example
 
             var apiInstance = new PartyControllerApi();
             var body = new GetAllPartiesRequest(); // GetAllPartiesRequest | 
-            var page = 56;  // Integer |  (optional)  (default to 1)
-            var pageSize = 56;  // Integer |  (optional)  (default to 10)
-            var orderBy = orderBy_example;  // String |  (optional)  (default to latest)
-            var partyAt = 2013-10-20T19:20:30+01:00;  // Date |  (optional) 
+            var page = new (); //  |  (optional)  (default to 1)
+            var pageSize = new (); //  |  (optional)  (default to 10)
+            var orderBy = new (); //  |  (optional)  (default to latest)
+            var partyAt = new (); //  |  (optional) 
 
             try
             {
@@ -10313,10 +9868,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
 $body = ; // GetAllPartiesRequest | 
-$page = 56; // Integer | 
-$pageSize = 56; // Integer | 
-$orderBy = orderBy_example; // String | 
-$partyAt = 2013-10-20T19:20:30+01:00; // Date | 
+$page = ; //  | 
+$pageSize = ; //  | 
+$orderBy = ; //  | 
+$partyAt = ; //  | 
 
 try {
     $result = $api_instance->getAllParties($body, $page, $pageSize, $orderBy, $partyAt);
@@ -10334,10 +9889,10 @@ use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
 my $body = WWW::SwaggerClient::Object::GetAllPartiesRequest->new(); # GetAllPartiesRequest | 
-my $page = 56; # Integer | 
-my $pageSize = 56; # Integer | 
-my $orderBy = orderBy_example; # String | 
-my $partyAt = 2013-10-20T19:20:30+01:00; # Date | 
+my $page = ; #  | 
+my $pageSize = ; #  | 
+my $orderBy = ; #  | 
+my $partyAt = ; #  | 
 
 eval { 
     my $result = $api_instance->getAllParties(body => $body, page => $page, pageSize => $pageSize, orderBy => $orderBy, partyAt => $partyAt);
@@ -10358,10 +9913,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
 body =  # GetAllPartiesRequest | 
-page = 56 # Integer |  (optional) (default to 1)
-pageSize = 56 # Integer |  (optional) (default to 10)
-orderBy = orderBy_example # String |  (optional) (default to latest)
-partyAt = 2013-10-20T19:20:30+01:00 # Date |  (optional)
+page =  #  |  (optional) (default to 1)
+pageSize =  #  |  (optional) (default to 10)
+orderBy =  #  |  (optional) (default to latest)
+partyAt =  #  |  (optional)
 
 try: 
     # 조건 및 태그에 맞는 파티 리스트 조회
@@ -10435,7 +9990,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    Integer
+                                                    
                                                 </span>
                                                     <span class="format">
                                                         (int32)
@@ -10454,7 +10009,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    Integer
+                                                    
                                                 </span>
                                                     <span class="format">
                                                         (int32)
@@ -10473,7 +10028,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    String
+                                                    
                                                 </span>
                                 
                                             </div>
@@ -10489,7 +10044,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    Date
+                                                    
                                                 </span>
                                                     <span class="format">
                                                         (date-time)
@@ -10604,7 +10159,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataGetPartyDetailResponse result = apiInstance.getPartyDetail(partyId);
             System.out.println(result);
@@ -10623,7 +10178,7 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataGetPartyDetailResponse result = apiInstance.getPartyDetail(partyId);
             System.out.println(result);
@@ -10639,7 +10194,7 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-getPartyDetail-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -10660,7 +10215,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -10691,7 +10246,7 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -10714,7 +10269,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $result = $api_instance->getPartyDetail($partyId);
@@ -10731,7 +10286,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     my $result = $api_instance->getPartyDetail(partyId => $partyId);
@@ -10751,7 +10306,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 상세 정보 조회
@@ -10778,7 +10333,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -10900,7 +10455,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Integer limit = 56; // Integer | 
+         limit = ; //  | 
         try {
             RsDataGetPartyMainResponse result = apiInstance.getPartyMain(limit);
             System.out.println(result);
@@ -10919,7 +10474,7 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Integer limit = 56; // Integer | 
+         limit = ; //  | 
         try {
             RsDataGetPartyMainResponse result = apiInstance.getPartyMain(limit);
             System.out.println(result);
@@ -10935,7 +10490,7 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-getPartyMain-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Integer *limit = 56; //  (optional) (default to 2)
+                              <pre class="prettyprint"><code class="language-cpp"> *limit = ; //  (optional) (default to 2)
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -10957,7 +10512,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
 var api = new Api.PartyControllerApi()
 var opts = { 
-  'limit': 56 // {{Integer}} 
+  'limit':  // {{}} 
 };
 var callback = function(error, data, response) {
   if (error) {
@@ -10988,7 +10543,7 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var limit = 56;  // Integer |  (optional)  (default to 2)
+            var limit = new (); //  |  (optional)  (default to 2)
 
             try
             {
@@ -11011,7 +10566,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$limit = 56; // Integer | 
+$limit = ; //  | 
 
 try {
     $result = $api_instance->getPartyMain($limit);
@@ -11028,7 +10583,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $limit = 56; # Integer | 
+my $limit = ; #  | 
 
 eval { 
     my $result = $api_instance->getPartyMain(limit => $limit);
@@ -11048,7 +10603,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-limit = 56 # Integer |  (optional) (default to 2)
+limit =  #  |  (optional) (default to 2)
 
 try: 
     # 파티 메인용 리스트 조회
@@ -11079,7 +10634,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    Integer
+                                                    
                                                 </span>
                                                     <span class="format">
                                                         (int32)
@@ -11194,7 +10749,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataGetAllPendingMemberResponse result = apiInstance.getPartyPendingMembers(partyId);
             System.out.println(result);
@@ -11213,7 +10768,7 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataGetAllPendingMemberResponse result = apiInstance.getPartyPendingMembers(partyId);
             System.out.println(result);
@@ -11229,7 +10784,7 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-getPartyPendingMembers-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -11250,7 +10805,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -11281,7 +10836,7 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -11304,7 +10859,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $result = $api_instance->getPartyPendingMembers($partyId);
@@ -11321,7 +10876,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     my $result = $api_instance->getPartyPendingMembers(partyId => $partyId);
@@ -11341,7 +10896,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 신청자 목록 확인
@@ -11368,7 +10923,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -11489,8 +11044,8 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.inviteParty(partyId, memberId);
         } catch (ApiException e) {
@@ -11508,8 +11063,8 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.inviteParty(partyId, memberId);
         } catch (ApiException e) {
@@ -11524,8 +11079,8 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-inviteParty-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
-Long *memberId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
+ *memberId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -11544,8 +11099,8 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
-var memberId = 789; // {{Long}} 
+var partyId = ; // {{}} 
+var memberId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -11576,8 +11131,8 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
-            var memberId = 789;  // Long | 
+            var partyId = new (); //  | 
+            var memberId = new (); //  | 
 
             try
             {
@@ -11599,8 +11154,8 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
-$memberId = 789; // Long | 
+$partyId = ; //  | 
+$memberId = ; //  | 
 
 try {
     $api_instance->inviteParty($partyId, $memberId);
@@ -11616,8 +11171,8 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
-my $memberId = 789; # Long | 
+my $partyId = ; #  | 
+my $memberId = ; #  | 
 
 eval { 
     $api_instance->inviteParty(partyId => $partyId, memberId => $memberId);
@@ -11636,8 +11191,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
-memberId = 789 # Long | 
+partyId =  #  | 
+memberId =  #  | 
 
 try: 
     # 파티 초대
@@ -11663,7 +11218,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -11685,7 +11240,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -11766,8 +11321,8 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.rejectParticipation(partyId, memberId);
         } catch (ApiException e) {
@@ -11785,8 +11340,8 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
-        Long memberId = 789; // Long | 
+         partyId = ; //  | 
+         memberId = ; //  | 
         try {
             apiInstance.rejectParticipation(partyId, memberId);
         } catch (ApiException e) {
@@ -11801,8 +11356,8 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-rejectParticipation-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
-Long *memberId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
+ *memberId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -11821,8 +11376,8 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
-var memberId = 789; // {{Long}} 
+var partyId = ; // {{}} 
+var memberId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -11853,8 +11408,8 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
-            var memberId = 789;  // Long | 
+            var partyId = new (); //  | 
+            var memberId = new (); //  | 
 
             try
             {
@@ -11876,8 +11431,8 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
-$memberId = 789; // Long | 
+$partyId = ; //  | 
+$memberId = ; //  | 
 
 try {
     $api_instance->rejectParticipation($partyId, $memberId);
@@ -11893,8 +11448,8 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
-my $memberId = 789; # Long | 
+my $partyId = ; #  | 
+my $memberId = ; #  | 
 
 eval { 
     $api_instance->rejectParticipation(partyId => $partyId, memberId => $memberId);
@@ -11913,8 +11468,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
-memberId = 789 # Long | 
+partyId =  #  | 
+memberId =  #  | 
 
 try: 
     # 파티 신청 거부
@@ -11940,7 +11495,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -11962,7 +11517,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -12043,7 +11598,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             apiInstance.requestParticipation(partyId);
         } catch (ApiException e) {
@@ -12061,7 +11616,7 @@ public class PartyControllerApiExample {
 
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             apiInstance.requestParticipation(partyId);
         } catch (ApiException e) {
@@ -12076,7 +11631,7 @@ public class PartyControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-requestParticipation-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *partyId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *partyId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -12094,7 +11649,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyControllerApi()
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -12125,7 +11680,7 @@ namespace Example
         {
 
             var apiInstance = new PartyControllerApi();
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -12147,7 +11702,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $api_instance->requestParticipation($partyId);
@@ -12163,7 +11718,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     $api_instance->requestParticipation(partyId => $partyId);
@@ -12182,7 +11737,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 신청
@@ -12208,7 +11763,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -12292,7 +11847,7 @@ public class PartyControllerApiExample {
         
         PartyControllerApi apiInstance = new PartyControllerApi();
         PutPartyRequest body = ; // PutPartyRequest | 
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataPutPartyResponse result = apiInstance.updateParty(body, partyId);
             System.out.println(result);
@@ -12312,7 +11867,7 @@ public class PartyControllerApiExample {
     public static void main(String[] args) {
         PartyControllerApi apiInstance = new PartyControllerApi();
         PutPartyRequest body = ; // PutPartyRequest | 
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataPutPartyResponse result = apiInstance.updateParty(body, partyId);
             System.out.println(result);
@@ -12329,7 +11884,7 @@ public class PartyControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-PartyController-updateParty-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">PutPartyRequest *body = ; // 
-Long *partyId = 789; // 
+ *partyId = ; // 
 
 PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
@@ -12352,7 +11907,7 @@ PartyControllerApi *apiInstance = [[PartyControllerApi alloc] init];
 
 var api = new Api.PartyControllerApi()
 var body = ; // {{PutPartyRequest}} 
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -12384,7 +11939,7 @@ namespace Example
 
             var apiInstance = new PartyControllerApi();
             var body = new PutPartyRequest(); // PutPartyRequest | 
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -12408,7 +11963,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyControllerApi();
 $body = ; // PutPartyRequest | 
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $result = $api_instance->updateParty($body, $partyId);
@@ -12426,7 +11981,7 @@ use WWW::SwaggerClient::PartyControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyControllerApi->new();
 my $body = WWW::SwaggerClient::Object::PutPartyRequest->new(); # PutPartyRequest | 
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     my $result = $api_instance->updateParty(body => $body, partyId => $partyId);
@@ -12447,7 +12002,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.PartyControllerApi()
 body =  # PutPartyRequest | 
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 수정
@@ -12474,7 +12029,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -12644,7 +12199,7 @@ public class PartyLogControllerApiExample {
         
         PartyLogControllerApi apiInstance = new PartyLogControllerApi();
         PostPartyLogRequest body = ; // PostPartyLogRequest | 
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataPostPartyLogResponse result = apiInstance.createPartyLog(body, partyId);
             System.out.println(result);
@@ -12664,7 +12219,7 @@ public class PartyLogControllerApiExample {
     public static void main(String[] args) {
         PartyLogControllerApi apiInstance = new PartyLogControllerApi();
         PostPartyLogRequest body = ; // PostPartyLogRequest | 
-        Long partyId = 789; // Long | 
+         partyId = ; //  | 
         try {
             RsDataPostPartyLogResponse result = apiInstance.createPartyLog(body, partyId);
             System.out.println(result);
@@ -12681,7 +12236,7 @@ public class PartyLogControllerApiExample {
   </div> -->
                             <div class="tab-pane" id="examples-PartyLogController-createPartyLog-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">PostPartyLogRequest *body = ; // 
-Long *partyId = 789; // 
+ *partyId = ; // 
 
 PartyLogControllerApi *apiInstance = [[PartyLogControllerApi alloc] init];
 
@@ -12704,7 +12259,7 @@ PartyLogControllerApi *apiInstance = [[PartyLogControllerApi alloc] init];
 
 var api = new Api.PartyLogControllerApi()
 var body = ; // {{PostPartyLogRequest}} 
-var partyId = 789; // {{Long}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -12736,7 +12291,7 @@ namespace Example
 
             var apiInstance = new PartyLogControllerApi();
             var body = new PostPartyLogRequest(); // PostPartyLogRequest | 
-            var partyId = 789;  // Long | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -12760,7 +12315,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyLogControllerApi();
 $body = ; // PostPartyLogRequest | 
-$partyId = 789; // Long | 
+$partyId = ; //  | 
 
 try {
     $result = $api_instance->createPartyLog($body, $partyId);
@@ -12778,7 +12333,7 @@ use WWW::SwaggerClient::PartyLogControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyLogControllerApi->new();
 my $body = WWW::SwaggerClient::Object::PostPartyLogRequest->new(); # PostPartyLogRequest | 
-my $partyId = 789; # Long | 
+my $partyId = ; #  | 
 
 eval { 
     my $result = $api_instance->createPartyLog(body => $body, partyId => $partyId);
@@ -12799,7 +12354,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.PartyLogControllerApi()
 body =  # PostPartyLogRequest | 
-partyId = 789 # Long | 
+partyId =  #  | 
 
 try: 
     # 파티 로그 작성
@@ -12826,7 +12381,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -12991,9 +12546,9 @@ public class PartyLogControllerApiExample {
     public static void main(String[] args) {
         
         PartyLogControllerApi apiInstance = new PartyLogControllerApi();
-        String body = ; // String | 
-        Long logId = 789; // Long | 
-        Long partyId = 789; // Long | 
+         body = ; //  | 
+         logId = ; //  | 
+         partyId = ; //  | 
         try {
             apiInstance.saveImageUrl(body, logId, partyId);
         } catch (ApiException e) {
@@ -13011,9 +12566,9 @@ public class PartyLogControllerApiExample {
 
     public static void main(String[] args) {
         PartyLogControllerApi apiInstance = new PartyLogControllerApi();
-        String body = ; // String | 
-        Long logId = 789; // Long | 
-        Long partyId = 789; // Long | 
+         body = ; //  | 
+         logId = ; //  | 
+         partyId = ; //  | 
         try {
             apiInstance.saveImageUrl(body, logId, partyId);
         } catch (ApiException e) {
@@ -13028,9 +12583,9 @@ public class PartyLogControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-PartyLogController-saveImageUrl-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *body = ; // 
-Long *logId = 789; // 
-Long *partyId = 789; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *body = ; // 
+ *logId = ; // 
+ *partyId = ; // 
 
 PartyLogControllerApi *apiInstance = [[PartyLogControllerApi alloc] init];
 
@@ -13050,9 +12605,9 @@ PartyLogControllerApi *apiInstance = [[PartyLogControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.PartyLogControllerApi()
-var body = ; // {{String}} 
-var logId = 789; // {{Long}} 
-var partyId = 789; // {{Long}} 
+var body = ; // {{}} 
+var logId = ; // {{}} 
+var partyId = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -13083,9 +12638,9 @@ namespace Example
         {
 
             var apiInstance = new PartyLogControllerApi();
-            var body = new String(); // String | 
-            var logId = 789;  // Long | 
-            var partyId = 789;  // Long | 
+            var body = new (); //  | 
+            var logId = new (); //  | 
+            var partyId = new (); //  | 
 
             try
             {
@@ -13107,9 +12662,9 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiPartyLogControllerApi();
-$body = ; // String | 
-$logId = 789; // Long | 
-$partyId = 789; // Long | 
+$body = ; //  | 
+$logId = ; //  | 
+$partyId = ; //  | 
 
 try {
     $api_instance->saveImageUrl($body, $logId, $partyId);
@@ -13125,9 +12680,9 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PartyLogControllerApi;
 
 my $api_instance = WWW::SwaggerClient::PartyLogControllerApi->new();
-my $body = WWW::SwaggerClient::Object::String->new(); # String | 
-my $logId = 789; # Long | 
-my $partyId = 789; # Long | 
+my $body = WWW::SwaggerClient::Object::->new(); #  | 
+my $logId = ; #  | 
+my $partyId = ; #  | 
 
 eval { 
     $api_instance->saveImageUrl(body => $body, logId => $logId, partyId => $partyId);
@@ -13146,9 +12701,9 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PartyLogControllerApi()
-body =  # String | 
-logId = 789 # Long | 
-partyId = 789 # Long | 
+body =  #  | 
+logId =  #  | 
+partyId =  #  | 
 
 try: 
     # 스크린샷 URL 저장
@@ -13174,7 +12729,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -13196,7 +12751,7 @@ except ApiException as e:
                                           <div class="json-schema-view">
                                               <div class="primitive">
                                                   <span class="type">
-                                                      Long
+                                                      
                                                   </span>
                                                       <span class="format">
                                                           (int64)
@@ -13228,9 +12783,7 @@ except ApiException as e:
                                   var schemaWrapper = {
   "content" : {
     "application/json" : {
-      "schema" : {
-        "type" : "string"
-      }
+      "schema" : { }
     }
   },
   "required" : true
@@ -13324,7 +12877,7 @@ public class SteamAuthControllerApiExample {
     public static void main(String[] args) {
         
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataString result = apiInstance.linkHandleSteamCallback(params);
             System.out.println(result);
@@ -13343,7 +12896,7 @@ public class SteamAuthControllerApiExample {
 
     public static void main(String[] args) {
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataString result = apiInstance.linkHandleSteamCallback(params);
             System.out.println(result);
@@ -13359,7 +12912,7 @@ public class SteamAuthControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-SteamAuthController-linkHandleSteamCallback-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">map[String, String] *params = ; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *params = ; // 
 
 SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
 
@@ -13380,7 +12933,7 @@ SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.SteamAuthControllerApi()
-var params = ; // {{map[String, String]}} 
+var params = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -13411,7 +12964,7 @@ namespace Example
         {
 
             var apiInstance = new SteamAuthControllerApi();
-            var params = new map[String, String](); // map[String, String] | 
+            var params = new (); //  | 
 
             try
             {
@@ -13434,7 +12987,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiSteamAuthControllerApi();
-$params = ; // map[String, String] | 
+$params = ; //  | 
 
 try {
     $result = $api_instance->linkHandleSteamCallback($params);
@@ -13451,7 +13004,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::SteamAuthControllerApi;
 
 my $api_instance = WWW::SwaggerClient::SteamAuthControllerApi->new();
-my $params = ; # map[String, String] | 
+my $params = ; #  | 
 
 eval { 
     my $result = $api_instance->linkHandleSteamCallback(params => $params);
@@ -13471,7 +13024,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SteamAuthControllerApi()
-params =  # map[String, String] | 
+params =  #  | 
 
 try: 
     # 스팀 인증 검증 및 계정 연동
@@ -13502,7 +13055,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    map[String, String]
+                                                    
                                                 </span>
                                 
                                             </div>
@@ -13875,7 +13428,7 @@ public class SteamAuthControllerApiExample {
     public static void main(String[] args) {
         
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataString result = apiInstance.loginHandleSteamCallback(params);
             System.out.println(result);
@@ -13894,7 +13447,7 @@ public class SteamAuthControllerApiExample {
 
     public static void main(String[] args) {
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataString result = apiInstance.loginHandleSteamCallback(params);
             System.out.println(result);
@@ -13910,7 +13463,7 @@ public class SteamAuthControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-SteamAuthController-loginHandleSteamCallback-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">map[String, String] *params = ; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *params = ; // 
 
 SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
 
@@ -13931,7 +13484,7 @@ SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.SteamAuthControllerApi()
-var params = ; // {{map[String, String]}} 
+var params = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -13962,7 +13515,7 @@ namespace Example
         {
 
             var apiInstance = new SteamAuthControllerApi();
-            var params = new map[String, String](); // map[String, String] | 
+            var params = new (); //  | 
 
             try
             {
@@ -13985,7 +13538,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiSteamAuthControllerApi();
-$params = ; // map[String, String] | 
+$params = ; //  | 
 
 try {
     $result = $api_instance->loginHandleSteamCallback($params);
@@ -14002,7 +13555,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::SteamAuthControllerApi;
 
 my $api_instance = WWW::SwaggerClient::SteamAuthControllerApi->new();
-my $params = ; # map[String, String] | 
+my $params = ; #  | 
 
 eval { 
     my $result = $api_instance->loginHandleSteamCallback(params => $params);
@@ -14022,7 +13575,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SteamAuthControllerApi()
-params =  # map[String, String] | 
+params =  #  | 
 
 try: 
     # 스팀 인증 검증 및 로그인
@@ -14053,7 +13606,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    map[String, String]
+                                                    
                                                 </span>
                                 
                                             </div>
@@ -14634,7 +14187,7 @@ public class SteamAuthControllerApiExample {
     public static void main(String[] args) {
         
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataMemberDetailDto result = apiInstance.signupHandleSteamCallback(params);
             System.out.println(result);
@@ -14653,7 +14206,7 @@ public class SteamAuthControllerApiExample {
 
     public static void main(String[] args) {
         SteamAuthControllerApi apiInstance = new SteamAuthControllerApi();
-        map[String, String] params = ; // map[String, String] | 
+         params = ; //  | 
         try {
             RsDataMemberDetailDto result = apiInstance.signupHandleSteamCallback(params);
             System.out.println(result);
@@ -14669,7 +14222,7 @@ public class SteamAuthControllerApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-SteamAuthController-signupHandleSteamCallback-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">map[String, String] *params = ; // 
+                              <pre class="prettyprint"><code class="language-cpp"> *params = ; // 
 
 SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
 
@@ -14690,7 +14243,7 @@ SteamAuthControllerApi *apiInstance = [[SteamAuthControllerApi alloc] init];
                               <pre class="prettyprint"><code class="language-js">var Api = require('_api');
 
 var api = new Api.SteamAuthControllerApi()
-var params = ; // {{map[String, String]}} 
+var params = ; // {{}} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -14721,7 +14274,7 @@ namespace Example
         {
 
             var apiInstance = new SteamAuthControllerApi();
-            var params = new map[String, String](); // map[String, String] | 
+            var params = new (); //  | 
 
             try
             {
@@ -14744,7 +14297,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\ApiSteamAuthControllerApi();
-$params = ; // map[String, String] | 
+$params = ; //  | 
 
 try {
     $result = $api_instance->signupHandleSteamCallback($params);
@@ -14761,7 +14314,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::SteamAuthControllerApi;
 
 my $api_instance = WWW::SwaggerClient::SteamAuthControllerApi->new();
-my $params = ; # map[String, String] | 
+my $params = ; #  | 
 
 eval { 
     my $result = $api_instance->signupHandleSteamCallback(params => $params);
@@ -14781,7 +14334,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.SteamAuthControllerApi()
-params =  # map[String, String] | 
+params =  #  | 
 
 try: 
     # 스팀 인증 검증 및 회원가입
@@ -14812,7 +14365,7 @@ except ApiException as e:
                                         <div class="json-schema-view">
                                             <div class="primitive">
                                                 <span class="type">
-                                                    map[String, String]
+                                                    
                                                 </span>
                                 
                                             </div>
